@@ -1,0 +1,30 @@
+server:
+  port: 8081
+
+  spring:
+    mvc:
+      static-path-pattern: /**
+    resources:
+          static-locations: file:D://picture/
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root
+    url: jdbc:mysql://127.0.0.1:3306/database1?serverTimezone=CST&useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&useSSL=true
+
+
+
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    #报错：Error executing DDL，解决方案：设置数据库引擎为InnoDB
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+  flyway:
+    out-of-order:
+  activemq:
+    pool:
+      expiry-timeout:3600
